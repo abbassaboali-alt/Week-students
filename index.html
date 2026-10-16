@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var isDev =
+          location.hostname === 'localhost' ||
+          location.hostname === '127.0.0.1' ||
+          location.hostname.endsWith('.run.app') ||
+          location.hostname.endsWith('.aistudio.google.com');
+
+        window.addEventListener(
+          'keydown',
+          function (e) {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+              e.preventDefault();
+            }
+          },
+          true
+        );
+
+        if (!isDev) {
+          var allowed = new Set([
+            'www.prudle-education.com',
+            'prudle-education.com',
+            'abbassaboali-alt.github.io',
+          ]);
+          if (
+            location.protocol !== 'https:' ||
+            !allowed.has(location.hostname.toLowerCase())
+          ) {
+            window.stop();
+            location.replace('https://www.prudle-education.com/log-in-out');
+          }
+        }
+      })();
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prudle - Student Follow-up</title>
+    <meta
+      name="description"
+      content="Prudle Institute · Academic Follow-up application for tracking and managing students in need of academic follow-up."
+    />
+    <meta property="og:title" content="Prudle - Student Follow-up" />
+    <meta
+      property="og:description"
+      content="Prudle Institute · Academic Follow-up application for tracking and managing students in need of academic follow-up."
+    />
+    <meta property="og:type" content="website" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/index-DWLEavaf.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BSBFbCnz.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
